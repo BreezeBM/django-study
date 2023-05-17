@@ -15,3 +15,11 @@
 
 - 프로젝트 안에 있는 모든 static 파일을 한 곳으로 모으는 명령어
 - ```python manage.py collectstatic```
+
+
+- models.py에 쓰는 내용을 디비와 연결시킬 py파일로 만드는 명령어 
+- ```python manage.py makemigrations```
+
+
+- 마이그레이션 파일을 만들고 연동하는 명령어
+- ```python manage.py migrate```

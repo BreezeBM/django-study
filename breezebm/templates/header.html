@@ -2,10 +2,19 @@
     <div>
         <h1 class="breeze_logo">BreezeBM</h1>
     </div>
-    <div>
+    <div style="font-family: 'Black Han Sans', sans-serif;">
         <span>nav1</span>
         <span>nav2</span>
         <span>nav3</span>
-        <span>nav4</span>
+        {% if not user.is_authenticated %}
+        <!--next 로그인을 하고 나서 원래자리로 돌아오게 됨-->
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <span>LOGIN</span>
+        </a>
+        {% else %}
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+            <span>LOGOUT</span>
+        </a>
+        {% endif %}
     </div>
 </div>

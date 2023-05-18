@@ -3,9 +3,9 @@
 {% block content %}
 
     <div style="border-radius: 1rem; margin: 2rem; text-align: center">
-        <h1 style="font-family: 'Black Han Sans', sans-serif">
+        <h4 style="font-family: 'Black Han Sans', sans-serif">
           HELLO WORLD LIST
-        </h1>
+        </h4>
 
         <form action="/account/hello_world/" method="post">
             {% csrf_token %}
@@ -15,7 +15,7 @@
             <div>
 
             </div>
-            <input type="submit" class="btn btn-primary" value="POST">
+            <input type="submit" class="btn btn-dark rounded-pill col-4 mt-3" value="POST">
         </form>
 
         {% if hello_world_list %}

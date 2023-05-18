@@ -1,19 +1,19 @@
 <div class="breeze_header">
     <div>
-        <h1 class="breeze_logo">BreezeBM</h1>
+        <h1 class="breeze_logo">BREEZEBM</h1>
     </div>
-    <div style="font-family: 'Black Han Sans', sans-serif;">
-        <span>nav1</span>
-        <span>nav2</span>
-        <span>nav3</span>
+    <div>
+        <span>NAV</span>
+        <span>NAV</span>
+        <span>NAV</span>
         {% if not user.is_authenticated %}
         <!--next 로그인을 하고 나서 원래자리로 돌아오게 됨-->
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-            <span>LOGIN</span>
+        <a style="color:black; text-decoration:none" href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <span style="font-size:0.7rem">LOGIN</span>
         </a>
         {% else %}
-        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
-            <span>LOGOUT</span>
+        <a style="color:black; text-decoration:none" href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+            <span style="font-size:0.7rem">LOGOUT</span>
         </a>
         {% endif %}
     </div>

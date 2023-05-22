@@ -11,6 +11,12 @@
         <h2 style="font-family: NanumSquareNeoExtraBold">
             {{ target_user.username }}
         </h2>
+
+        {% if target_user == user %}
+        <a style="color:grey; text-decoration:none;" href="{% url 'accountapp:update' pk=user.pk %}">
+            <p>CHANEGE INFO</p>
+        </a>
+        {% endif %}
     </div>
 </div>
 

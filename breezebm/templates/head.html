@@ -45,5 +45,19 @@
             src: local('NanumSquareNeoHeavy'),
             url("{% static 'fonts/NanumSquareNeoOTF-Hv.otf'%}") format("opentype")
         }
+
+        .change_text {
+            animation: change_text 1s linear infinite;
+        }
+
+        @keyframes change_text {
+            0% {color: black;}
+            17% {color: red;}
+            34% {color: orange;}
+            51% {color: #FDE300;}
+            68% {color: green;}
+            85% {color: blue;}
+            100% {color: purple;}
+        }
     </style>
 </head>

@@ -13,8 +13,12 @@
         </h2>
 
         {% if target_user == user %}
-        <a style="color:grey; text-decoration:none;" href="{% url 'accountapp:update' pk=user.pk %}">
+        <a style="color:grey; text-decoration:none;" href="{% url 'accountapp:update' pk=target_user.pk %}">
             <p>CHANEGE INFO</p>
+        </a>
+
+        <a style="color:grey; text-decoration:none;" href="{% url 'accountapp:delete' pk=target_user.pk %}">
+            <div style="font-size: .4rem">LEAVE THIS SERVICE</div>
         </a>
         {% endif %}
     </div>

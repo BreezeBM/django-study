@@ -12,6 +12,9 @@
             <span style="font-size:0.7rem">LOGIN</span>
         </a>
         {% else %}
+        <a style="color:black; text-decoration:none" href="{% url 'accountapp:detail'  pk=user.pk %}">
+            <span style="font-size:0.7rem">MYPAGE</span>
+        </a>
         <a style="color:black; text-decoration:none" href="{% url 'accountapp:logout' %}?next={{ request.path }}">
             <span style="font-size:0.7rem">LOGOUT</span>
         </a>

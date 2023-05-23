@@ -23,3 +23,7 @@
 
 - 마이그레이션 파일을 만들고 연동하는 명령어
 - ```python manage.py migrate```
+
+
+- 슈퍼 유저 만드는 명령어
+- ```python manage.py createsuperuser```

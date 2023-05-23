@@ -5,30 +5,37 @@
 
 <div>
     <div style="text-align:center; max-width:500px; margin: 4rem auto;">
+        {% if target_user.profile %}
         <h2 style="font-family: NanumSquareNeoExtraBold">PROFILE</h2>
 
-        {% if target_user.profile %}
         <img src="{{ target_user.profile.image.url }}" alt="" style="height: 8rem; width: 8rem; border-radius: 10rem; margin-bottom: 1rem; margin-top: 1rem">
 
         <h2 style="font-family: NanumSquareNeoExtraBold">
             {{ target_user.profile.nickname }}
-            <a class="change_text" style="text-decoration:none;" href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                <div style="font-size: .5rem">
-                    EDIT PROFILE
-                </div>
-            </a>
+            {% if target_user == user %}
+                <a class="change_text" style="text-decoration:none;" href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    <div style="font-size: .5rem">
+                            EDIT PROFILE
+                    </div>
+                </a>
         </h2>
-        {% else %}
-        <a class="change_text" style="text-decoration:none;" href="{% url 'profileapp:create' %}">
-            <h2 style="font-family: NanumSquareNeoExtraBold">
-                CREATE PROFILE
-            </h2>
-        </a>
-        {% endif %}
-
-        <h6 style="margin-top: 1.2rem; margin-bottom: 1.2rem">
+            {% endif %}
+        <h5 style="margin-top: 1.2rem; margin-bottom: 1.2rem">
             {{ target_user.profile.message }}
-        </h6>
+        </h5>
+        {% else %}
+            {% if target_user == user %}
+                <a class="change_text" style="text-decoration:none;" href="{% url 'profileapp:create' %}">
+                    <h2 style="font-family: NanumSquareNeoExtraBold">
+                        CREATE PROFILE
+                </h2>
+            </a>
+            {% else %}
+            <h2 class="change_text">
+                YOU DON'T HAVE YOUR OWN NICKNAME
+            </h2>
+            {% endif %}
+        {% endif %}
 
         {% if target_user == user %}
         <a style="color:grey; text-decoration:none;" href="{% url 'accountapp:update' pk=target_user.pk %}">

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div style="text-align:center; max-width:500px; margin:4rem auto">
+    <div>
+        <h4 style="font-family: 'Black Han Sans', sans-serif">DELETE ARTICLE - {{ target_article.title }}</h4>
+    </div>
+    <form action="{% url 'articleapp:delete' pk=target_article.pk %}" method="post">
+        {% csrf_token %}
+        <div class="change_text">Deleted data will not be recovered.</div>
+        <input type="submit" class="btn btn-sm btn-danger rounded-pill col-3 mt-3">
+    </form>
+</div>
+
+{% endblock %}
